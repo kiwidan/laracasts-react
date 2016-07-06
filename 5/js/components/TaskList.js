@@ -11,8 +11,8 @@ var TaskList = React.createClass({
     displayTask: function(task, i) {
         return (
             <li className={ task.done ? 'done': '' } >
+                <input type="checkbox" onClick={ this.completeTask.bind(this, i) } />
                 { task.title }
-                <button className={ task.done ? 'hidden' : '' } onClick={ this.completeTask.bind(this, i) }>&#10004;</button>
                 <button onClick={ this.deleteTask.bind(this, i) }>x</button>
             </li>
         );

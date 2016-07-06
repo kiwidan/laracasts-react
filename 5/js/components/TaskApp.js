@@ -66,7 +66,7 @@ var TaskApp = React.createClass({
 
     render: function() {
         return (
-            <div>
+            <div className="task-list">
                 <h1>My Tasks</h1>
                 <TaskList 
                     tasks={ this.state.tasks } 
