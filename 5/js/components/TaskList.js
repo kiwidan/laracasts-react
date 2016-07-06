@@ -1,7 +1,7 @@
 var TaskList = React.createClass({
 
-    completeTask: function(index) {
-        this.props.completeTask(index);
+    toggleTaskState: function(index) {
+        this.props.toggleTaskState(index);
     },
 
     deleteTask: function(index) {
@@ -11,7 +11,10 @@ var TaskList = React.createClass({
     displayTask: function(task, i) {
         return (
             <li className={ task.done ? 'done': '' } >
-                <input type="checkbox" onClick={ this.completeTask.bind(this, i) } />
+                <input
+                    type="checkbox"
+                    checked={ task.done }
+                    onChange={ this.toggleTaskState.bind(this, i) } />
                 { task.title }
                 <button onClick={ this.deleteTask.bind(this, i) }>x</button>
             </li>

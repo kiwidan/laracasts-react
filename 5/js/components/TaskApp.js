@@ -16,12 +16,12 @@ var TaskApp = React.createClass({
         };
     },
 
-    onChange: function(e) {
-        this.setState({ task: e.target.value });
+    onChange: function(event) {
+        this.setState({ task: event.target.value });
     },
 
-    addTask: function(e) {
-        e.preventDefault();
+    addTask: function(event) {
+        event.preventDefault();
 
         // Check something has been entered into the input
         if (this.state.task.length > 0) {
@@ -42,12 +42,12 @@ var TaskApp = React.createClass({
         // else show an error
     },
 
-    completeTask: function(index) {
+    toggleTaskState: function(index) {
         // Make a copy of tasks
         var tasks = this.state.tasks;
 
         // Update the done property of the task
-        tasks[index].done = true;
+        tasks[index].done = !tasks[index].done;
 
         // Update the state
         this.setState({ tasks });
@@ -71,7 +71,7 @@ var TaskApp = React.createClass({
                 <TaskList 
                     tasks={ this.state.tasks } 
                     deleteTask={ this.deleteTask }
-                    completeTask={ this.completeTask } />
+                    toggleTaskState={ this.toggleTaskState } />
 
                 <form onSubmit={this.addTask}>
                     <input onChange={this.onChange} value={this.state.task} />
