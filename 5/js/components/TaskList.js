@@ -12,7 +12,7 @@ var TaskList = React.createClass({
         return (
             <li className={ task.done ? 'done': '' } >
                 { task.title }
-                <button onClick={ this.completeTask.bind(this, i) }>&#10004;</button>
+                <button className={ task.done ? 'hidden' : '' } onClick={ this.completeTask.bind(this, i) }>&#10004;</button>
                 <button onClick={ this.deleteTask.bind(this, i) }>x</button>
             </li>
         );
