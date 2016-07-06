@@ -10,7 +10,10 @@ var TaskList = React.createClass({
 
     displayTask: function(task, i) {
         return (
-            <li className={ 'task ' + (task.done ? 'done': '') }>
+            <li
+                key={ i }
+                className={ 'task ' + (task.done ? 'done': '') } >
+                
                 <input
                     type="checkbox"
                     checked={ task.done }
