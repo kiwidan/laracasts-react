@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Five: Learning React</title>
+
+        <!-- Styles -->
+        <style type="text/css">
+            .done {
+                color: green;
+                text-decoration: line-through;
+            }
+        </style>
+
+        <!-- React -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/react.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/JSXTransformer.js"></script>
+    </head>
+    <body>
+
+        <!-- React Components -->
+        <script type="text/jsx;harmony=true" src="/5/js/components/TaskApp.js"></script>
+        <script type="text/jsx;harmony=true" src="/5/js/components/TaskList.js"></script>
+
+        <!-- Page Specific React -->
+        <script type="text/jsx">
+            React.render(<TaskApp />, document.body);
+        </script>
+    </body>
+</html>
