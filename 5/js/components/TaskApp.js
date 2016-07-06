@@ -66,16 +66,22 @@ var TaskApp = React.createClass({
 
     render: function() {
         return (
-            <div className="task-list">
+            <div className="task-app">
                 <h1>My Tasks</h1>
                 <TaskList 
                     tasks={ this.state.tasks } 
                     deleteTask={ this.deleteTask }
                     toggleTaskState={ this.toggleTaskState } />
 
-                <form onSubmit={this.addTask}>
-                    <input onChange={this.onChange} value={this.state.task} />
-                    <button>Add task</button>
+                <form
+                    className="add-task"
+                    onSubmit={ this.addTask } >
+                    
+                    <input
+                        onChange={ this.onChange }
+                        value={ this.state.task } />
+                    
+                    <button>Add</button>
                 </form>
             </div>
         );
