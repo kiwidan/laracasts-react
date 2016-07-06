@@ -77,5 +77,6 @@ body {
 }
 
 .add-task button:hover {
-    text-decoration: underline;
+    background: #228cfc;
+    color: white;
 }
