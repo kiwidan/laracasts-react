@@ -2,8 +2,27 @@ var Gistbox = React.createClass({
 
     getInitialState: function() {
         return {
-            gists: []
+            gists: [{ username: 'paddymoran', url: 'https://gist.github.com/paddymoran/0888ee37380be3435cfc486e26f0d2ac' }]
         };
+    },
+
+    addGist: function(username) {
+        var url = `https://api.github.com/users/${username}/gists`;
+
+        $.get(url, function(result) {
+            // Get the most recent gist
+            var gist = result[0];
+
+            // Get the values we need
+            var username = gist.owner.login;
+            var url = gist.html_url;
+
+            // Add the new gist to the gists array
+            var gists = this.state.gists.concat({ username, url });
+
+            // Update the state
+            this.setState({ gists });
+        }.bind(this));
     },
 
     render: function() {
@@ -13,10 +32,10 @@ var Gistbox = React.createClass({
         };
 
         return (
-            <div>
+            <div className="gistbox">
                 <h1>Gistbox</h1>
-                <form>
-                </form>
+
+                <AddGist onAdd={ this.addGist } />
 
                 { this.state.gists.map(newGist) }
             </div>
