@@ -3,23 +3,25 @@
     <head>
         <title>Six: Learning React</title>
 
-        <!-- Font (Roboto) -->
-        <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
-
-        <!-- Custom CSS -->
-        <link rel="stylesheet" type="text/css" href="/5/css/main.css">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     </head>
     <body>
+
+        <div id="app"></div>
 
         <!-- React -->
         <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/react.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/JSXTransformer.js"></script>
 
         <!-- React Components -->
-        <script type="text/jsx;harmony=true" src="/5/js/components/TaskApp.js"></script>
-        <script type="text/jsx;harmony=true" src="/5/js/components/TaskList.js"></script>
+        <script type="text/jsx;harmony=true" src="/6 Gistbox/js/components/Gist.js"></script>
+        <script type="text/jsx;harmony=true" src="/6 Gistbox/js/components/Gistbox.js"></script>
 
+        <!-- Page specific React -->
+        <script type="text/jsx">
+            React.render(<Gistbox />, document.querySelector('#app'));
+        </script>
 
-        
     </body>
 </html>
