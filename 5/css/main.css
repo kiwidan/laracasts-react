@@ -37,6 +37,14 @@ body {
     max-width: 300px;
 }
 
+.task {
+    border-left: 4px solid #aaa;
+}
+
+.task.done {
+    border-color: green;
+}
+
 .task button {
     float: right;
 }
